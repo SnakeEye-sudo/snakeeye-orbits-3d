@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnakeEye Orbits - 3D Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <h1 class="logo">SnakeEye Orbits</h1>
+            <p class="tagline">Never blinking, always building</p>
+        </nav>
+
+        <div class="scene-wrapper">
+            <canvas id="canvas"></canvas>
+            <div class="overlay">
+                <div class="loading">Loading 3D Scene...</div>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <h2>Orbiting Projects</h2>
+            <ul id="project-list" class="project-list">
+                <li><span class="dot"></span> Hover over orbiting objects for project info</li>
+            </ul>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2025 SnakeEye. Built with Three.js and WebGL</p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
