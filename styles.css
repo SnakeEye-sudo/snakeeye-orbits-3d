@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1425 100%);
+  color: #e0e0e0;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(circle at 30% 60%, rgba(0, 255, 150, 0.05) 0%, transparent 50%);
+}
+
+.navbar {
+  padding: 20px 40px;
+  background: rgba(10, 14, 39, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 255, 150, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 255, 150, 0.05);
+  animation: slideDown 0.6s ease-out;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #00ff96;
+  text-shadow: 0 0 10px rgba(0, 255, 150, 0.5);
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.tagline {
+  font-size: 14px;
+  color: #888;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.scene-wrapper {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #0a0e27 0%, #1a1f3a 100%);
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 14, 39, 0.9);
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loading {
+  font-size: 18px;
+  color: #00ff96;
+  letter-spacing: 3px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.info-panel {
+  padding: 20px 40px;
+  background: rgba(10, 14, 39, 0.9);
+  border-top: 1px solid rgba(0, 255, 150, 0.1);
+  max-height: 150px;
+  overflow-y: auto;
+  animation: slideUp 0.6s ease-out;
+}
+
+.info-panel h2 {
+  font-size: 16px;
+  color: #00ff96;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.project-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.project-list li {
+  font-size: 13px;
+  color: #aaa;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: default;
+  transition: color 0.3s ease;
+}
+
+.project-list li:hover {
+  color: #00ff96;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00ff96;
+  box-shadow: 0 0 10px rgba(0, 255, 150, 0.6);
+}
+
+.footer {
+  padding: 15px 40px;
+  background: rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(0, 255, 150, 0.05);
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+scrollbar-width: thin;
+scrollbar-color: rgba(0, 255, 150, 0.3) transparent;
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 150, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 150, 0.5);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .info-panel {
+    padding: 15px 20px;
+  }
+
+  .project-list {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
